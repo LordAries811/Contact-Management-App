@@ -53,7 +53,7 @@ const loginUser = asyncHandler(async (req, res) => {
             }
         },
             process.env.ACCESS_TOKEN,
-            { expiresIn: "15m" },);
+            { expiresIn: "60m" },);
 
         res.status(200).json({ accessToken });
     }
@@ -63,7 +63,7 @@ const loginUser = asyncHandler(async (req, res) => {
 });
 
 const currentUser = asyncHandler(async (req, res) => {
-    console.log(req.user);
+    //console.log(req.user);
     return res.json(req.user);
 });
 
